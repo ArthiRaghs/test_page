@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protected Page</title>
+</head>
+<body>
+  <div id="login">
+    <input type="password" id="pwd" placeholder="Password">
+    <button onclick="check()">Enter</button>
+    <p id="err" style="color:red"></p>
+  </div>
+
+  <div id="content" style="display:none">
+    <h1>Secret Content</h1>
+    <p>You're in!</p>
+  </div>
+
+  <script>
+    function check() {
+      if (document.getElementById('pwd').value === 'secret123') {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      } else {
+        document.getElementById('err').textContent = 'Wrong password';
+      }
+    }
+  </script>
+</body>
+</html>
